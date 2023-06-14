@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+</head>
+
+<body>
+<div class="shell">
+    <div class="shell-top">
+        <div class="word">
+            <h2>Welcome to</h2>
+            <h2>滑动变组's Web</h2>
+        </div>
+
+        <video src="{% static 'image/synth city by VISUALDON 4K 60 FPS.mp4' %}" loop autoplay muted></video>
+
+    </div>
+    <div class="shell-main">
+        <div class="shell-main-nav">
+            <div class="logo">
+                <img src="{% static './image/H.jfif' %}" alt="">
+                <span>滑动变组</span>
+            </div>
+            <ul>
+                <li><a href="{% url 'index' %}">关于我们</a></li>
+                <li><a href="{% url 'present_movie' %}">电影数据展示</a></li>
+                <li><a href="{% url 'present_novel' %}">小说数据展示</a></li>
+                <li><a href="{% url 'present_weather' %}">天气数据展示</a></li>
+                <li><a href="{% url 'final_page' %}">最后</a></li>
+                <div class="nav-box"></div>
+            </ul>
+        </div>
+        <div class="shell-main-lbt">
+            <ui class="images">
+                <li class="img">
+                    <div class="shell-main-lbt-word">
+                        <h2>Absolutely honest goods</h2><br/>
+                        <span>历时两周，在小组成员的一起努力下，我们终于完成了这个项目！</span>
+                    </div>
+                </li>
+                <li class="img">
+                    <div class="shell-main-lbt-word">
+                        <h2>Absolutely productive team</h2><br/>
+                        <span>在搭建过程中，我们通过任务分工，实现了项目高效率开发！</span>
+                    </div>
+                </li>
+                <li class="img">
+                    <div class="shell-main-lbt-word">
+                        <h2>We have a lot of skills</h2><br/>
+                        <span>我们了解Python语言，多线程爬虫，以及echarts的前端展示！</span>
+                    </div>
+                </li>
+            </ui>
+            <ui class="min-images">
+                <li class="min"></li>
+                <li class="min"></li>
+                <li class="min"></li>
+            </ui>
+            <div class="button">
+                <div class="button-left"><</div>
+                <div class="button-right">></div>
+            </div>
+        </div>
+        <div class="shell-main-content">
+            <div class="shell-main-content-left">
+                <h2>Number of<br/>our team</h2>
+                <div class="shell-main-content-left-fans">
+                    <ul>
+                        <li><img src="{% static '/image/吴宇欣.jpg' %}" alt=""></li>
+                        <li><img src="{% static '/image/阮仁毅.jpg' %}" alt=""></li>
+                        <li><img src="{% static '/image/冯涛.jpg' %}" alt=""></li>
+                        <li><img src="{% static '/image/左浩然.jpg' %}" alt=""></li>
+                        <li><img src="{% static '/image/秦宇杰.jpg' %}" alt=""></li>
+{#                        <li><img src="{% static 'image/tx (6).jpg' %}" alt=""></li>#}
+{#                        <li><img src="{% static 'image/tx (7).jpg' %}" alt=""></li>#}
+{#                        <li><img src="{% static 'image/tx (8).jpg' %}" alt=""></li>#}
+                        <li><span>•••
+                                    </span></li>
+                    </ul>
+                </div>
+            </div>
+{#            <div class="shell-main-content-right">#}
+{#                <h2>常驻平台：Bilibili</h2>#}
+{#                <span>以前端视频为主的知识分享区up主</span>#}
+{#                <img src="{% static 'image/fs.jpg' %}" alt="">#}
+{#            </div>#}
+        </div>
+        <div class="shell-main-bottom">
+            <h2><span>开</span>发流程:</h2>
+            <div class="shell-main-bottom-bottom">
+                <ul>
+                    <li>
+                        <img src="{% static 'image/sp.png' %}" alt="">
+                        <h2>Django框架搭建:</h2>
+                        <span>基于python语言，我们利用pycharm软件搭建了Django框架</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'image/sp2.png' %}" alt="">
+                        <h2>后台数据爬取:</h2>
+                        <span>在后台，我们利用多线程技术，爬取了豆瓣TOP250、笔趣阁小说排行榜和重庆市南岸区2023年的天气数据，并将其存放在数据库中</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'image/前端展示.jpg' %}" alt="">
+                        <h2>前端网页展示:</h2>
+                        <span>利用echarts绘图可视化技术，我们将爬取的数据实时展示在网页上</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'image/玛奇玛.jpg' %}" alt="">
+                        <h2>设备访问支持:</h2>
+                        <span>网站的服务端连接我们自己的路由器，使得任何设备都能通过访问服务器的IP地址进行网页访问！</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="shell-main-footer">
+            <span>版权所有-滑动变组</span>
+        </div>
+    </div>
+</div>
+</body>
+<!-- 引入jquery -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+<script>
+    window.addEventListener('scroll', function () {
+        let top = window.scrollY
+        if (top != 0) {
+            $('.shell-top').css('top', '-100vh')
+            $('.shell-main').css('top', '0')
+            $('.shell-main-lbt-word').css('transform', 'translateY(0px)')
+            $('.shell-main-lbt-word').css('backdrop-filter', 'blur(5px)')
+            $('.shell-main-lbt-word h2').css('transform', 'translate(0px)')
+            $('.shell-main-lbt-word span').css('transform', 'translate(0px)')
+
+        } else {
+            $('.shell-top').css('top', '0px')
+            $('.shell-main').css('top', '100vh')
+            $('.shell-main-lbt-word').css('transform', 'translateY(400px)')
+            $('.shell-main-lbt-word').css('backdrop-filter', 'blur(0px)')
+            $('.shell-main-lbt-word h2').css('transform', 'translate(520px)')
+            $('.shell-main-lbt-word span').css('transform', 'translate(-620px)')
+        }
+        if (top > 650) {
+            $('.shell-main-header-left-top').css('opacity', '1')
+            $('.shell-main-header-left-top').css('transform', 'translateY(0px)')
+            $('.shell-main-header-left-bottom').css('opacity', '1')
+            $('.shell-main-header-left-bottom').css('transform', 'translateY(0px)')
+            $('.shell-main-header-left-footer').css('opacity', '1')
+            $('.shell-main-header-left-footer').css('transform', 'translateY(0px)')
+        } else {
+            $('.shell-main-header-left-top').css('opacity', '0')
+            $('.shell-main-header-left-top').css('transform', 'translateY(400px)')
+            $('.shell-main-header-left-bottom').css('opacity', '0')
+            $('.shell-main-header-left-bottom').css('transform', 'translateY(400px)')
+            $('.shell-main-header-left-footer').css('opacity', '0')
+            $('.shell-main-header-left-footer').css('transform', 'translateY(400px)')
+        }
+    })
+    let left = document.querySelector(".button-left")
+    let right = document.querySelector(".button-right")
+    let min = document.querySelectorAll(".min")
+    let images = document.querySelector(".images")
+    let index = 0
+    let time
+
+    function position() {
+        images.style.left = (index * -100) + "%"
+    }
+
+    function add() {
+        if (index >= min.length - 1) {
+            index = 0
+        } else {
+            index++
+        }
+    }
+
+    function desc() {
+        if (index < 1) {
+            index = min.length - 1
+        } else {
+            index--
+        }
+    }
+
+    function timer() {
+        time = setInterval(() => {
+            index++
+            desc()
+            add()
+            position()
+        }, 34000)
+    }
+
+    left.addEventListener("click", () => {
+        desc()
+        position()
+        clearInterval(time)
+        timer()
+    })
+    // 右边的按钮和左边也是差不多
+    right.addEventListener("click", () => {
+        add()
+        position()
+        clearInterval(time)
+        timer()
+    })
+
+    for (let i = 0; i < min.length; i++) {
+        min[i].addEventListener("click", () => {
+            index = i
+            position()
+            clearInterval(time)
+            timer()
+        })
+    }
+
+    timer()
+</script>
+
+</html>
